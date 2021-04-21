@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TC.Domain
+namespace TCC.Domain
 {
 	public class AuditableEntity
 	{

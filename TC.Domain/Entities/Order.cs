@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TC.Domain.Entities
+namespace TCC.Domain.Entities
 {
 	public class Order : AuditableEntity
 	{
