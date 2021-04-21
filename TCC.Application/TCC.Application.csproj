@@ -14,4 +14,8 @@
     <ProjectReference Include="..\TCC.Domain\TCC.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Products\Commands\CreateProduct\" />
+  </ItemGroup>
+
 </Project>

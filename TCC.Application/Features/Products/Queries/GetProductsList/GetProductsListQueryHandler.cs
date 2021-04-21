@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using TCC.Application.Contracts.Persistence;
 using TCC.Domain.Entities;
 
-namespace TCC.Application.Features.Products
+namespace TCC.Application.Features.Products.Queries.GetProductsList
 {
 	public class GetProductsListQueryHandler : IRequestHandler<GetProductsListQuery, List<ProductListVm>>
 	{

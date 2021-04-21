@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TCC.Application.Features.Products
+namespace TCC.Application.Features.Products.Queries.GetProductDetail
 {
 	public class GetProductDetailQuery : IRequest<ProductDetailVm>
 	{

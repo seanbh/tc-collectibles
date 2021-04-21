@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TCC.Application.Features.Products
+namespace TCC.Application.Features.Products.Queries.GetProductDetail
 {
 	public class ProductDetailVm
 	{
