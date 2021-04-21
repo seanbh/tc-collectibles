@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TC.Domain.Entities
 {
-	public class Category
+	public class Category : AuditableEntity
 	{
-		public Guid CategoryId { get; set; }
+		public Guid Id { get; set; }
 		public string Name { get; set; }
-		public ICollection<Collectible> Collectibles { get; set; }
+		public ICollection<Product> Products { get; set; }
 	}
 }

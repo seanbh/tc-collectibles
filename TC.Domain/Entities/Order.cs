@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TC.Domain.Entities
 {
-	public class Order
+	public class Order : AuditableEntity
 	{
-		public Guid OrderId { get; set; }
+		public Guid Id { get; set; }
 		public Guid UserId { get; set; }
 		public decimal OrderTotal { get; set; }
 	}

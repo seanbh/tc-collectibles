@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TC.Domain.Entities
 {
-	public class Collectible
+	public class Product : AuditableEntity
 	{
-		public Guid CollectibleId { get; set; }
+		public Guid Id { get; set; }
 		public string Name { get; set; }
 		public Guid CategoryId { get; set; }
 		public decimal Price { get; set; }
