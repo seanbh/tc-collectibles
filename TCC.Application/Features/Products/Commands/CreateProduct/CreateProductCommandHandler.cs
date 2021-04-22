@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GloboTicket.TicketManagement.Application.Exceptions;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,14 @@ namespace TCC.Application.Features.Products.Commands.CreateProduct
 		}
 		public async Task<Guid> Handle(CreateProductCommand request, CancellationToken cancellationToken)
 		{
+			var validator = new CreateCommandValidator();
+			var validationResult = await validator.ValidateAsync(request);
+
+			if(validationResult.Errors.Any())
+			{
+				throw new ValidationException(validationResult);
+			}
+
 			var product = mapper.Map<Product>(request);
 			product = await repository.AddAsync(product);
 			return product.Id;
