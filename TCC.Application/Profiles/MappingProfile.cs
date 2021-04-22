@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using TCC.Application.Features.Categories.Queries.GetCategoriesList;
 using TCC.Application.Features.Categories.Queries.GetCategoriesListWithProducts;
+using TCC.Application.Features.Products.Commands.CreateProduct;
+using TCC.Application.Features.Products.Commands.UpdateProduct;
 using TCC.Application.Features.Products.Queries.GetProductDetail;
 using TCC.Application.Features.Products.Queries.GetProductsList;
 using TCC.Domain.Entities;
@@ -21,6 +23,8 @@ namespace TCC.Application.Profiles
 			CreateMap<Category, CategoryDto>().ReverseMap();
 			CreateMap<Category, CategoryListVm>().ReverseMap();
 			CreateMap<Category, CategoryProductListVm>().ReverseMap();
+			CreateMap<Product, CreateProductCommand>().ReverseMap();
+			CreateMap<Product, UpdateProductCommand>().ReverseMap();
 		}
 	}
 }
