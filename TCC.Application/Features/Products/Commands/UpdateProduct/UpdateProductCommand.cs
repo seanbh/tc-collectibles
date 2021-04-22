@@ -10,7 +10,7 @@ namespace TCC.Application.Features.Products.Commands.UpdateProduct
 {
 	public class UpdateProductCommand: IRequest
 	{
-		public Guid Id { get; set; }
+		public Guid ProductId { get; set; }
 		public string Name { get; set; }
 		public Guid CategoryId { get; set; }
 		public decimal Price { get; set; }

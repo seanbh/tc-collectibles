@@ -24,7 +24,7 @@ namespace TCC.Application.Features.Products.Commands.CreateProduct
 		}
 		public async Task<Guid> Handle(CreateProductCommand request, CancellationToken cancellationToken)
 		{
-			var validator = new CreateCommandValidator();
+			var validator = new CreateProductCommandValidator();
 			var validationResult = await validator.ValidateAsync(request);
 
 			if(validationResult.Errors.Any())
@@ -34,7 +34,7 @@ namespace TCC.Application.Features.Products.Commands.CreateProduct
 
 			var product = mapper.Map<Product>(request);
 			product = await repository.AddAsync(product);
-			return product.Id;
+			return product.ProductId;
 		}
 	}
 }

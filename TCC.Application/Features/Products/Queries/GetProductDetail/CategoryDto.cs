@@ -8,7 +8,7 @@ namespace TCC.Application.Features.Products.Queries.GetProductDetail
 {
 	public class CategoryDto
 	{
-		public Guid Id { get; set; }
+		public Guid CategoryId { get; set; }
 		public string Name { get; set; }
 	}
 }

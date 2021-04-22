@@ -23,7 +23,7 @@ namespace TCC.Application.Features.Products.Commands.UpdateProduct
 		}
 		public async Task<Unit> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
 		{
-			var productToUpdate = await repository.GetByIdAsync(request.Id);
+			var productToUpdate = await repository.GetByIdAsync(request.ProductId);
 			mapper.Map(request, productToUpdate, typeof(UpdateProductCommand), typeof(Product));
 			await repository.UpdateAsync(productToUpdate);
 

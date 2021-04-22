@@ -8,8 +8,10 @@ namespace TCC.Domain.Entities
 {
 	public class Product : AuditableEntity
 	{
-		public Guid Id { get; set; }
+		public Guid ProductId { get; set; }
 		public string Name { get; set; }
+		public DateTime Year { get; set; }
+		public string ImageUrl { get; set; }
 		public Guid CategoryId { get; set; }
 		public decimal Price { get; set; }
 	}

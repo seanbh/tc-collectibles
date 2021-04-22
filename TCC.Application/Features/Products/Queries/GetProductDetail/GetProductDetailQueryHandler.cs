@@ -25,7 +25,7 @@ namespace TCC.Application.Features.Products.Queries.GetProductDetail
 		}
 		public async Task<ProductDetailVm> Handle(GetProductDetailQuery request, CancellationToken cancellationToken)
 		{
-			var productDetail = await _productRepository.GetByIdAsync(request.Id);
+			var productDetail = await _productRepository.GetByIdAsync(request.ProductId);
 			var productDetailVm = _mapper.Map<ProductDetailVm>(productDetail);
 
 			var category = _categoryRepository.GetByIdAsync(productDetail.CategoryId);

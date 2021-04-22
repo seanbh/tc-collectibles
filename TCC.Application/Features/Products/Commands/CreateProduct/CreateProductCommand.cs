@@ -9,7 +9,7 @@ namespace TCC.Application.Features.Products.Commands.CreateProduct
 {
 	public class CreateProductCommand : IRequest<Guid>
 	{
-		public Guid Id { get; set; }
+		public Guid ProductId { get; set; }
 		public string Name { get; set; }
 		public Guid CategoryId { get; set; }
 		public decimal Price { get; set; }

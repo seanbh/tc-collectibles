@@ -9,10 +9,10 @@ namespace TCC.Application.Features.Products.Queries.GetProductDetail
 {
 	public class GetProductDetailQuery : IRequest<ProductDetailVm>
 	{
-		public Guid Id { get; set; }
+		public Guid ProductId { get; set; }
 		public GetProductDetailQuery(Guid id)
 		{
-			Id = id;
+			ProductId = id;
 		}
 	}
 }

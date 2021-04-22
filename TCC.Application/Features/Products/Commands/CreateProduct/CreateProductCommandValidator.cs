@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace TCC.Application.Features.Products.Commands.CreateProduct
 {
-	public class CreateCommandValidator: AbstractValidator<CreateProductCommand>
+	public class CreateProductCommandValidator: AbstractValidator<CreateProductCommand>
 	{
-		public CreateCommandValidator()
+		public CreateProductCommandValidator()
 		{
 			RuleFor(p => p.Name)
 				.NotEmpty().WithMessage("Name required")
-				.NotNull();
+				.NotNull()
+				.MaximumLength(50);
 
 			RuleFor(p => p.Price)
 				.NotEmpty().WithMessage("Price is required")
