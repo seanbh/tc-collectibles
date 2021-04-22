@@ -13,18 +13,18 @@ namespace TCC.Application.Features.Products.Queries.GetProductsList
 {
 	public class GetProductsListQueryHandler : IRequestHandler<GetProductsListQuery, List<ProductListVm>>
 	{
-		private readonly IMapper _mapper;
-		private readonly IAsyncRepository<Product> _productRepository;
+		private readonly IMapper mapper;
+		private readonly IAsyncRepository<Product> productRepository;
 
 		public GetProductsListQueryHandler(IMapper mapper, IAsyncRepository<Product> productRepository)
 		{
-			_mapper = mapper;
-			_productRepository = productRepository;
+			this.mapper = mapper;
+			this.productRepository = productRepository;
 		}
 		public async Task<List<ProductListVm>> Handle(GetProductsListQuery request, CancellationToken cancellationToken)
 		{
-			var allProducts = (await _productRepository.ListAllAsync()).OrderBy(p => p.Name);
-			return _mapper.Map<List<ProductListVm>>(allProducts);
+			var allProducts = (await productRepository.ListAllAsync()).OrderBy(p => p.Name);
+			return mapper.Map<List<ProductListVm>>(allProducts);
 		}
 	}
 }
