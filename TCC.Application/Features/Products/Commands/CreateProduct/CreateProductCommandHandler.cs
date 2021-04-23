@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using TCC.Application.Contracts.Infrastructure;
 using TCC.Application.Contracts.Persistence;
+using TCC.Application.Models.Mail;
 using TCC.Domain.Entities;
 
 namespace TCC.Application.Features.Products.Commands.CreateProduct
@@ -16,11 +18,13 @@ namespace TCC.Application.Features.Products.Commands.CreateProduct
 	{
 		private readonly Mapper mapper;
 		private readonly IProductRepository repository;
+		private readonly IEmailService emailService;
 
-		public CreateProductCommandHandler(Mapper mapper, IProductRepository repository)
+		public CreateProductCommandHandler(Mapper mapper, IProductRepository repository, IEmailService emailService)
 		{
 			this.mapper = mapper;
 			this.repository = repository;
+			this.emailService = emailService;
 		}
 		public async Task<Guid> Handle(CreateProductCommand request, CancellationToken cancellationToken)
 		{
@@ -34,6 +38,15 @@ namespace TCC.Application.Features.Products.Commands.CreateProduct
 
 			var product = mapper.Map<Product>(request);
 			product = await repository.AddAsync(product);
+
+			try
+			{
+				await emailService.SendEmail(new Email() { To="seanhaddock@live.com", Body="Product created", Subject="Product Created" });
+			}
+			catch (Exception ex)
+			{
+				// todo: log
+			}
 			return product.ProductId;
 		}
 	}
