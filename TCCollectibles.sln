@@ -15,9 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCC.Application", "TCC.Appl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{20E24397-62DB-4BAB-8691-B58845354673}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Persistence", "TC.Persistence\TCC.Persistence.csproj", "{D8D45EE4-BFC3-4AF8-A5D4-21CE2A78545E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Persistence", "TCC.Persistence\TCC.Persistence.csproj", "{D8D45EE4-BFC3-4AF8-A5D4-21CE2A78545E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Infrastructure", "TC.Infrastructure\TCC.Infrastructure.csproj", "{731E0288-63EA-4B5E-9F36-AE53FAF49548}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Infrastructure", "TCC.Infrastructure\TCC.Infrastructure.csproj", "{731E0288-63EA-4B5E-9F36-AE53FAF49548}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
