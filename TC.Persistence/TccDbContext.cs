@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using TCC.Domain;
 using TCC.Domain.Entities;
 
-namespace TC.Persistence
+namespace TCC.Persistence
 {
 	public class TccDbContext : DbContext
 	{

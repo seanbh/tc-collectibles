@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using TCC.Application.Contracts.Persistence;
 using TCC.Domain.Entities;
 
-namespace TC.Persistence.Repositories
+namespace TCC.Persistence.Repositories
 {
 	public class CategoryRepository : BaseRepository<Category>, ICategoryRepository
 	{

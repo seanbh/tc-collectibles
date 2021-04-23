@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using TCC.Application.Contracts.Infrastructure;
 using TCC.Application.Models.Mail;
 
-namespace TC.Infrastructure.Mail
+namespace TCC.Infrastructure.Mail
 {
     public class EmailService : IEmailService
     {

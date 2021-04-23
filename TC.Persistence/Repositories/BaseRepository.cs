@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TCC.Application.Contracts.Persistence;
 
-namespace TC.Persistence.Repositories
+namespace TCC.Persistence.Repositories
 {
 	public class BaseRepository<T> : IAsyncRepository<T> where T: class
 	{

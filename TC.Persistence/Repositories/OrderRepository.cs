@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TCC.Domain.Entities;
 
-namespace TC.Persistence.Repositories
+namespace TCC.Persistence.Repositories
 {
 	public class OrderRepository : BaseRepository<Order>
 	{
