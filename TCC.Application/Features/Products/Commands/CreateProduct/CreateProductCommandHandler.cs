@@ -16,11 +16,11 @@ namespace TCC.Application.Features.Products.Commands.CreateProduct
 {
 	public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, Guid>
 	{
-		private readonly Mapper mapper;
+		private readonly IMapper mapper;
 		private readonly IProductRepository repository;
 		private readonly IEmailService emailService;
 
-		public CreateProductCommandHandler(Mapper mapper, IProductRepository repository, IEmailService emailService)
+		public CreateProductCommandHandler(IMapper mapper, IProductRepository repository, IEmailService emailService)
 		{
 			this.mapper = mapper;
 			this.repository = repository;

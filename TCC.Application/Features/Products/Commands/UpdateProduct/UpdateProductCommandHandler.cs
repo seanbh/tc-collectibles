@@ -13,10 +13,10 @@ namespace TCC.Application.Features.Products.Commands.UpdateProduct
 {
 	public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand>
 	{
-		private readonly Mapper mapper;
+		private readonly IMapper mapper;
 		private readonly IProductRepository repository;
 
-		public UpdateProductCommandHandler(Mapper mapper, IProductRepository repository)
+		public UpdateProductCommandHandler(IMapper mapper, IProductRepository repository)
 		{
 			this.mapper = mapper;
 			this.repository = repository;

@@ -12,10 +12,10 @@ namespace TCC.Application.Features.Products.Commands.DeleteProduct
 {
 	public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommand>
 	{
-		private readonly Mapper mapper;
+		private readonly IMapper mapper;
 		private readonly IProductRepository repository;
 
-		public DeleteProductCommandHandler(Mapper mapper, IProductRepository repository)
+		public DeleteProductCommandHandler(IMapper mapper, IProductRepository repository)
 		{
 			this.mapper = mapper;
 			this.repository = repository;

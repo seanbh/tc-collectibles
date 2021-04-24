@@ -12,10 +12,10 @@ namespace TCC.Application.Features.Categories.Queries.GetCategoriesListWithProdu
 {
 	public class GetCategoriesListWithProductsQueryHandler : IRequestHandler<GetCategoriesListWithProductsQuery, List<CategoryProductListVm>>
 	{
-		private readonly Mapper mapper;
+		private readonly IMapper mapper;
 		private readonly ICategoryRepository repository;
 
-		public GetCategoriesListWithProductsQueryHandler(Mapper mapper, ICategoryRepository repository)
+		public GetCategoriesListWithProductsQueryHandler(IMapper mapper, ICategoryRepository repository)
 		{
 			this.mapper = mapper;
 			this.repository = repository;

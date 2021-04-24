@@ -13,10 +13,10 @@ namespace TCC.Application.Features.Categories.Queries.GetCategoriesList
 {
 	public class GetCategoriesListQueryHandler : IRequestHandler<GetCategoriesListQuery, List<CategoryListVm>>
 	{
-		private readonly Mapper mapper;
+		private readonly IMapper mapper;
 		private readonly IAsyncRepository<Category> repository;
 
-		public GetCategoriesListQueryHandler(Mapper mapper, IAsyncRepository<Category> repository)
+		public GetCategoriesListQueryHandler(IMapper mapper, IAsyncRepository<Category> repository)
 		{
 			this.mapper = mapper;
 			this.repository = repository;
