@@ -43,7 +43,7 @@ namespace TCC.Application.Features.Products.Commands.CreateProduct
 			{
 				await emailService.SendEmail(new Email() { To="seanhaddock@live.com", Body="Product created", Subject="Product Created" });
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				// todo: log
 			}
