@@ -21,11 +21,12 @@ namespace TCC.Application.Profiles
 		{
 			CreateMap<Product, ProductListVm>().ReverseMap();
 			CreateMap<Product, ProductDetailVm>().ReverseMap();
+			CreateMap<Product, CategoryProductDto>().ReverseMap();
+			CreateMap<Product, CreateProductCommand>().ReverseMap();
+			CreateMap<Product, UpdateProductCommand>().ReverseMap();
 			CreateMap<Category, CategoryDto>().ReverseMap();
 			CreateMap<Category, CategoryListVm>().ReverseMap();
 			CreateMap<Category, CategoryProductListVm>().ReverseMap();
-			CreateMap<Product, CreateProductCommand>().ReverseMap();
-			CreateMap<Product, UpdateProductCommand>().ReverseMap();
 			CreateMap<Category, CreateCategoryDto>().ReverseMap();
 		}
 	}
