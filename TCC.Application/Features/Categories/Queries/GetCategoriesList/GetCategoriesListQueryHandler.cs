@@ -23,6 +23,7 @@ namespace TCC.Application.Features.Categories.Queries.GetCategoriesList
 		}
 		public async Task<List<CategoryListVm>> Handle(GetCategoriesListQuery request, CancellationToken cancellationToken)
 		{
+			throw new Exception("Is anybody listening?");
 			var categories = (await repository.ListAllAsync()).OrderBy(c => c.Name);
 			return mapper.Map<List<CategoryListVm>>(categories);
 		}
