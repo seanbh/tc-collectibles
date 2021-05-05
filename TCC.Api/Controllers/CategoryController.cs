@@ -23,6 +23,13 @@ namespace TCC.Api.Controllers
 			this.mediator = mediator;
 		}
 
+		[HttpGet("instance")]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		public ActionResult<string> GetInstanceId()
+        {
+			return Environment.GetEnvironmentVariable("WEBSITE_INSTANCE_ID");
+        }
+
 		[HttpGet("all", Name = "GetAllCategories")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		public async Task<ActionResult<List<CategoryListVm>>> GetAllCategories()
