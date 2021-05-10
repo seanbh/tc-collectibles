@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Application.UnitTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Persistence.IntegrationTests", "TCC.Persistence.IntegrationTests\TCC.Persistence.IntegrationTests.csproj", "{EFC992E0-B83E-4250-B272-6520C00F1656}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.API.IntegrationTests", "TCC.API.IntegrationTests\TCC.API.IntegrationTests.csproj", "{F3295380-46AC-439E-BF9F-B94F426926C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{EFC992E0-B83E-4250-B272-6520C00F1656}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFC992E0-B83E-4250-B272-6520C00F1656}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFC992E0-B83E-4250-B272-6520C00F1656}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3295380-46AC-439E-BF9F-B94F426926C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3295380-46AC-439E-BF9F-B94F426926C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3295380-46AC-439E-BF9F-B94F426926C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3295380-46AC-439E-BF9F-B94F426926C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{54495C42-BB0C-42CC-86F3-9F74198367F7} = {FFA83B10-2949-498A-93D4-86ABF6B67410}
 		{07B61D06-671B-4484-BAEC-0230493E452D} = {FFA83B10-2949-498A-93D4-86ABF6B67410}
 		{EFC992E0-B83E-4250-B272-6520C00F1656} = {FFA83B10-2949-498A-93D4-86ABF6B67410}
+		{F3295380-46AC-439E-BF9F-B94F426926C8} = {FFA83B10-2949-498A-93D4-86ABF6B67410}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F95ADAFC-D2D4-4282-B032-0D61AEBBBEDB}
