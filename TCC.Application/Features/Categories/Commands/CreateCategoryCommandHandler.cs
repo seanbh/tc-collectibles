@@ -45,5 +45,10 @@ namespace TCC.Application.Features.Categories.Commands
 
 			return createCategoryCommandResponse;
 		}
+
+		public Task Handle(CreateCategoryCommand createCategoryCommand, object cancellationToken)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
