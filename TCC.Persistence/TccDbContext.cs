@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using TCC.Application.Contracts;
 using TCC.Domain;
 using TCC.Domain.Entities;
 
@@ -12,11 +13,18 @@ namespace TCC.Persistence
 {
 	public class TccDbContext : DbContext
 	{
+		private readonly ILoggedInUserService loggedInUserService;
+
 		public TccDbContext(DbContextOptions<TccDbContext> options): base(options)
 		{
 		}
 
-		public DbSet<Product> Products { get; set; }
+        public TccDbContext(DbContextOptions<TccDbContext> options, ILoggedInUserService userService) : base(options)
+        {
+			this.loggedInUserService = userService;
+		}
+
+        public DbSet<Product> Products { get; set; }
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Order> Orders { get; set; }
 
@@ -195,11 +203,11 @@ namespace TCC.Persistence
                 {
                     case EntityState.Added:
                         entry.Entity.CreatedDate = DateTime.Now;
-                        //entry.Entity.CreatedBy = _loggedInUserService.UserId;
+                        entry.Entity.CreatedBy = loggedInUserService.UserId;
                         break;
                     case EntityState.Modified:
                         entry.Entity.LastModifiedDate = DateTime.Now;
-                        //entry.Entity.LastModifiedBy = _loggedInUserService.UserId;
+                        entry.Entity.LastModifiedBy = loggedInUserService.UserId;
                         break;
                 }
             }
