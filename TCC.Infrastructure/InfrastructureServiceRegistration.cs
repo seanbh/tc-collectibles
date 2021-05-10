@@ -3,6 +3,7 @@ using TCC.Application.Models.Mail;
 using TCC.Infrastructure.Mail;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TCC.Infrastructure.FileExport;
 
 namespace TCC.Infrastructure
 {
@@ -13,6 +14,7 @@ namespace TCC.Infrastructure
 			services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
 
 			services.AddTransient<IEmailService, EmailService>();
+			services.AddScoped<ICsvExporter, CsvExporter>();
 
 			return services;
 		}

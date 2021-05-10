@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TCC.Application.Features.Categories.Commands;
+using TCC.Application.Features.Categories.Queries.GetCategoriesExport;
 using TCC.Application.Features.Categories.Queries.GetCategoriesList;
 using TCC.Application.Features.Categories.Queries.GetCategoriesListWithProducts;
 using TCC.Application.Features.Products.Commands.CreateProduct;
@@ -28,6 +29,7 @@ namespace TCC.Application.Profiles
 			CreateMap<Category, CategoryListVm>().ReverseMap();
 			CreateMap<Category, CategoryProductListVm>().ReverseMap();
 			CreateMap<Category, CreateCategoryDto>().ReverseMap();
+			CreateMap<Category, CategoryExportDto>().ReverseMap();
 		}
 	}
 }

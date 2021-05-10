@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TCC.Application.Features.Categories.Commands;
+using TCC.Application.Features.Categories.Queries.GetCategoriesExport;
 using TCC.Application.Features.Categories.Queries.GetCategoriesList;
 using TCC.Application.Features.Categories.Queries.GetCategoriesListWithProducts;
 using TCC.Domain.Entities;
@@ -53,5 +54,13 @@ namespace TCC.Api.Controllers
 			var response = await mediator.Send(createCategoryCommand);
 			return Ok(response);
 		}
+
+		[HttpGet("export", Name ="Export Categories")]
+		public async Task<FileResult> ExportCategories()
+		{
+			var fileDto = await mediator.Send(new GetCategoriesExportQuery());
+			return File(fileDto.Data, fileDto.ContentType, fileDto.FileName);
+		}
+
 	}
 }
