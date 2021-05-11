@@ -25,11 +25,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCC.Api", "TCC.Api\TCC.Api.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{54495C42-BB0C-42CC-86F3-9F74198367F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Application.UnitTests", "TCC.Application.UnitTests\TCC.Application.UnitTests.csproj", "{07B61D06-671B-4484-BAEC-0230493E452D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCC.Application.UnitTests", "TCC.Application.UnitTests\TCC.Application.UnitTests.csproj", "{07B61D06-671B-4484-BAEC-0230493E452D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Persistence.IntegrationTests", "TCC.Persistence.IntegrationTests\TCC.Persistence.IntegrationTests.csproj", "{EFC992E0-B83E-4250-B272-6520C00F1656}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCC.Persistence.IntegrationTests", "TCC.Persistence.IntegrationTests\TCC.Persistence.IntegrationTests.csproj", "{EFC992E0-B83E-4250-B272-6520C00F1656}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.API.IntegrationTests", "TCC.API.IntegrationTests\TCC.API.IntegrationTests.csproj", "{F3295380-46AC-439E-BF9F-B94F426926C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCC.API.IntegrationTests", "TCC.API.IntegrationTests\TCC.API.IntegrationTests.csproj", "{F3295380-46AC-439E-BF9F-B94F426926C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{EAAAED83-0F67-405C-8580-E7E9251B118C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.App.BlazorWeb", "TCC.App.BlazorWeb\TCC.App.BlazorWeb.csproj", "{952FDBDC-2F31-4F9D-BFE6-FC196E8B62E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +77,10 @@ Global
 		{F3295380-46AC-439E-BF9F-B94F426926C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3295380-46AC-439E-BF9F-B94F426926C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3295380-46AC-439E-BF9F-B94F426926C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{952FDBDC-2F31-4F9D-BFE6-FC196E8B62E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{952FDBDC-2F31-4F9D-BFE6-FC196E8B62E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{952FDBDC-2F31-4F9D-BFE6-FC196E8B62E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{952FDBDC-2F31-4F9D-BFE6-FC196E8B62E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +98,8 @@ Global
 		{07B61D06-671B-4484-BAEC-0230493E452D} = {FFA83B10-2949-498A-93D4-86ABF6B67410}
 		{EFC992E0-B83E-4250-B272-6520C00F1656} = {FFA83B10-2949-498A-93D4-86ABF6B67410}
 		{F3295380-46AC-439E-BF9F-B94F426926C8} = {FFA83B10-2949-498A-93D4-86ABF6B67410}
+		{EAAAED83-0F67-405C-8580-E7E9251B118C} = {3CE7FF94-E173-416F-8DA9-1FC3B1B6200D}
+		{952FDBDC-2F31-4F9D-BFE6-FC196E8B62E2} = {EAAAED83-0F67-405C-8580-E7E9251B118C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F95ADAFC-D2D4-4282-B032-0D61AEBBBEDB}
