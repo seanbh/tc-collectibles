@@ -36,7 +36,7 @@ namespace TCC.Application.UnitTests.Categories.Commands
 			var handler = new CreateCategoryCommandHandler(mapper, mockCategoryRepository.Object);
 			await handler.Handle(new CreateCategoryCommand() { Name = "Test" }, CancellationToken.None);
 			var categories = await mockCategoryRepository.Object.ListAllAsync();
-			categories.Count.ShouldBe(5);
+			categories.Count.ShouldBe(3);
 		}
 	}
 }

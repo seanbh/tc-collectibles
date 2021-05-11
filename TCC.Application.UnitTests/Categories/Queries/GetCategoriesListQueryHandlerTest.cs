@@ -38,7 +38,7 @@ namespace TCC.Application.UnitTests.Categories.Queries
 			var categories= await handler.Handle(new GetCategoriesListQuery(), CancellationToken.None);
 
 			categories.ShouldBeOfType<List<CategoryListVm>>();
-			categories.Count.ShouldBe(4);
+			categories.Count.ShouldBe(2);
 		}
 	}
 }
