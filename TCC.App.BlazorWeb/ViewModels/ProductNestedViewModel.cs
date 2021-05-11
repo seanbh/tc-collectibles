@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 
 namespace TCC.App.BlazorWeb.ViewModels
 {
-    public class CategoryProductsViewModel
+    public class ProductNestedViewModel
     {
-        public Guid CategoryId { get; set; }
+        public Guid ProductId { get; set; }
         public string Name { get; set; }
-        public ICollection<ProductNestedViewModel> Products { get; set; }
+        public int Price { get; set; }        
+        public Guid CategoryId { get; set; }
     }
 }

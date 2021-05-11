@@ -7,25 +7,32 @@ using System.Threading.Tasks;
 using TCC.App.BlazorWeb.Contracts;
 using TCC.App.BlazorWeb.Services.Base;
 using TCC.App.BlazorWeb.ViewModels;
-using TCC.App.Services;
 
 namespace TCC.App.BlazorWeb.Services
 {
     public class CategoryDataService : BaseDataService, ICategoryDataService
     {
+        private readonly IMapper mapper;
+
         public CategoryDataService(IClient client, IMapper mapper, ILocalStorageService localStorage): base(client, localStorage)
         {
-
+            this.mapper = mapper;
         }
 
-        public Task<List<CategoryViewModel>> GetAllCategories()
+        public async Task<List<CategoryViewModel>> GetAllCategories()
         {
-            throw new NotImplementedException();
+            await AddBearerToken();
+            var allCategories = await client.GetAllCategoriesAsync();
+            var mappedCategories = mapper.Map<ICollection<CategoryViewModel>>(allCategories);
+            return mappedCategories.ToList();
         }
 
-        public Task<List<CategoryProductsViewModel>> GetAllCategoriesWithEvents()
+        public async Task<List<CategoryProductsViewModel>> GetAllCategoriesWithEvents()
         {
-            throw new NotImplementedException();
+            await AddBearerToken();
+            var categoriesWithProducts = await client.GetCategoriesWithProductsAsync();
+            var mappedCategories = mapper.Map<ICollection<CategoryProductsViewModel>>(categoriesWithProducts);
+            return mappedCategories.ToList();
         }
     }
 }
