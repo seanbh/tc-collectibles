@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TCC.App.BlazorWeb.Services.Base;
 using TCC.App.BlazorWeb.ViewModels;
 
 namespace TCC.App.BlazorWeb.Contracts
@@ -10,6 +11,6 @@ namespace TCC.App.BlazorWeb.Contracts
     {
         Task<List<CategoryViewModel>> GetAllCategories();
         Task<List<CategoryProductsViewModel>> GetAllCategoriesWithEvents();
-        //Task<ApiResponse<CategoryDto>> CreateCategory(CategoryViewModel categoryViewModel);
+        Task<ApiResponse<CreateCategoryDto>> CreateCategory(CategoryViewModel categoryViewModel);
     }
 }

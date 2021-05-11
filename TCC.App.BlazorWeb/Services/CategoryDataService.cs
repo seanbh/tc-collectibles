@@ -19,6 +19,34 @@ namespace TCC.App.BlazorWeb.Services
             this.mapper = mapper;
         }
 
+        public async Task<ApiResponse<CreateCategoryDto>> CreateCategory(CategoryViewModel categoryViewModel)
+        {
+            try
+            {
+                ApiResponse<CreateCategoryDto> apiResponse = new ApiResponse<CreateCategoryDto>();
+                CreateCategoryCommand createCategoryCommand = mapper.Map<CreateCategoryCommand>(categoryViewModel);
+                var response = await client.AddCategoryAsync(createCategoryCommand);
+                if(response.Success)
+                {
+                    apiResponse.Data = response.Category;
+                    apiResponse.Success = true;
+                }
+                else
+                {
+                    apiResponse.Data = null;
+                    foreach (var error in response.ValidationErrors)
+                    {
+                        apiResponse.ValidationErrors += error + Environment.NewLine;
+                    }
+                }
+                return apiResponse;
+            }
+            catch (ApiException ex)
+            {
+                return ConvertApiExceptions<CreateCategoryDto>(ex);
+            }
+        }
+
         public async Task<List<CategoryViewModel>> GetAllCategories()
         {
             await AddBearerToken();
