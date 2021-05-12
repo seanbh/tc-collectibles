@@ -68,13 +68,11 @@ namespace TCC.App.BlazorWeb.Services.Base
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.1.0 (NJsonSchema v10.4.3.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class Client : IClient
     {
-        private string _baseUrl = "";
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
     
-        public Client(string baseUrl, System.Net.Http.HttpClient httpClient)
+        public Client(System.Net.Http.HttpClient httpClient)
         {
-            BaseUrl = baseUrl;
             _httpClient = httpClient;
             _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(CreateSerializerSettings);
         }
@@ -84,12 +82,6 @@ namespace TCC.App.BlazorWeb.Services.Base
             var settings = new Newtonsoft.Json.JsonSerializerSettings();
             UpdateJsonSerializerSettings(settings);
             return settings;
-        }
-    
-        public string BaseUrl
-        {
-            get { return _baseUrl; }
-            set { _baseUrl = value; }
         }
     
         protected Newtonsoft.Json.JsonSerializerSettings JsonSerializerSettings { get { return _settings.Value; } }
@@ -113,7 +105,7 @@ namespace TCC.App.BlazorWeb.Services.Base
         public async System.Threading.Tasks.Task<string> InstanceAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Category/instance");
+            urlBuilder_.Append("api/Category/instance");
     
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -187,7 +179,7 @@ namespace TCC.App.BlazorWeb.Services.Base
         public async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<CategoryListVm>> GetAllCategoriesAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Category/all");
+            urlBuilder_.Append("api/Category/all");
     
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -261,7 +253,7 @@ namespace TCC.App.BlazorWeb.Services.Base
         public async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<CategoryProductListVm>> GetCategoriesWithProductsAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Category/allwithproducts");
+            urlBuilder_.Append("api/Category/allwithproducts");
     
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -339,7 +331,7 @@ namespace TCC.App.BlazorWeb.Services.Base
         public async System.Threading.Tasks.Task<CreateCategoryCommandResponse> AddCategoryAsync(CreateCategoryCommand body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Category");
+            urlBuilder_.Append("api/Category");
     
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -416,7 +408,7 @@ namespace TCC.App.BlazorWeb.Services.Base
         public async System.Threading.Tasks.Task Export_CategoriesAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Category/export");
+            urlBuilder_.Append("api/Category/export");
     
             var client_ = _httpClient;
             var disposeClient_ = false;

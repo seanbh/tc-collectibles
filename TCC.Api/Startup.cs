@@ -56,6 +56,8 @@ namespace TCC.Api
 
 			app.UseRouting();
 
+			app.UseCors("Open");
+
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>

@@ -5,6 +5,8 @@ using System;
 using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
+using TCC.App.BlazorWeb.Contracts;
+using TCC.App.BlazorWeb.Services;
 using TCC.App.BlazorWeb.Services.Base;
 
 namespace TCC.App.BlazorWeb
@@ -21,8 +23,10 @@ namespace TCC.App.BlazorWeb
 
             //builder.Services.AddAuthorizationCore();
 
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-            builder.Services.AddHttpClient<IClient, Client>(client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
+            builder.Services.AddSingleton(sp => new HttpClient { BaseAddress = new Uri("https://localhost:44394/") });
+            builder.Services.AddHttpClient<IClient, Client>(client => client.BaseAddress = new Uri("https://localhost:44394/"));
+
+            builder.Services.AddScoped<ICategoryDataService, CategoryDataService>();
 
             await builder.Build().RunAsync();
         }
