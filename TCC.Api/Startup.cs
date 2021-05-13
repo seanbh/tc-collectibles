@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using TCC.Api.Middleware;
 using TCC.Application;
 using TCC.Infrastructure;
 using TCC.Persistence;
@@ -55,6 +56,8 @@ namespace TCC.Api
 			app.UseHttpsRedirection();
 
 			app.UseRouting();
+
+			app.UseCustomExceptionHandler();
 
 			app.UseCors("Open");
 

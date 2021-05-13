@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace GloboTicket.TicketManagement.Application.Exceptions
+namespace TCC.Application.Exceptions
 {
     public class ValidationException : ApplicationException
     {

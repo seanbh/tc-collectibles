@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using GloboTicket.TicketManagement.Application.Exceptions;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -9,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using TCC.Application.Contracts.Infrastructure;
 using TCC.Application.Contracts.Persistence;
+using TCC.Application.Exceptions;
 using TCC.Application.Models.Mail;
 using TCC.Domain.Entities;
 
