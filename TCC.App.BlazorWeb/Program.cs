@@ -23,8 +23,8 @@ namespace TCC.App.BlazorWeb
 
             //builder.Services.AddAuthorizationCore();
 
-            builder.Services.AddSingleton(sp => new HttpClient { BaseAddress = new Uri("https://localhost:44394/") });
-            builder.Services.AddHttpClient<IClient, Client>(client => client.BaseAddress = new Uri("https://localhost:44394/"));
+            builder.Services.AddSingleton(sp => new HttpClient { BaseAddress = new Uri("https://localhost:44343/") });
+            builder.Services.AddHttpClient<IClient, Client>(client => client.BaseAddress = new Uri("https://localhost:44343/"));
 
             builder.Services.AddScoped<ICategoryDataService, CategoryDataService>();
 
