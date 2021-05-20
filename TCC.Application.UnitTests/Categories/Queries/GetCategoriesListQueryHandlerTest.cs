@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.Extensions.Logging;
 using Moq;
 using Shouldly;
 using System;
@@ -18,11 +19,13 @@ namespace TCC.Application.UnitTests.Categories.Queries
 	public class GetCategoriesListQueryHandlerTest
 	{
 		private readonly Mock<ICategoryRepository> mockCategoryRepository;
+		private readonly Mock<ILogger<GetCategoriesListQueryHandler>> mockLogger;
 		private readonly IMapper mapper;
 
 		public GetCategoriesListQueryHandlerTest()
 		{
 			mockCategoryRepository = RepositoryMocks.GetCategoryRepository();
+			mockLogger = new Mock<ILogger<GetCategoriesListQueryHandler>>();
 			var configProvider = new MapperConfiguration(cfg =>
 			{
 				cfg.AddProfile<MappingProfile>();
@@ -33,7 +36,7 @@ namespace TCC.Application.UnitTests.Categories.Queries
 		[Fact]
 		public async Task GetCategoriesListTest()
 		{
-			var handler = new GetCategoriesListQueryHandler(mapper, mockCategoryRepository.Object);
+			var handler = new GetCategoriesListQueryHandler(mapper, mockCategoryRepository.Object, mockLogger.Object);
 
 			var categories= await handler.Handle(new GetCategoriesListQuery(), CancellationToken.None);
 

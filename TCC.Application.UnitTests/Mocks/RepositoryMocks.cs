@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using Microsoft.Extensions.Logging;
+using Moq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using TCC.Domain.Entities;
 namespace TCC.Application.UnitTests.Mocks
 {
 	public class RepositoryMocks
-	{
+	{		
 		public static Mock<ICategoryRepository> GetCategoryRepository()
 		{
             var baseballCardGuid = Guid.Parse("{B0788D2F-8003-43C1-92A4-EDC76A7C5DDE}");

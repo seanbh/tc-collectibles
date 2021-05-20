@@ -18,15 +18,15 @@ namespace TCC.Application.Features.Categories.Queries.GetCategoriesList
 		private readonly IAsyncRepository<Category> repository;
         private readonly ILogger<GetCategoriesListQueryHandler> logger;
 
-        public GetCategoriesListQueryHandler(IMapper mapper, IAsyncRepository<Category> repository)
+        public GetCategoriesListQueryHandler(IMapper mapper, IAsyncRepository<Category> repository, ILogger<GetCategoriesListQueryHandler> logger)
 		{
 			this.mapper = mapper;
 			this.repository = repository;
-			//, ILogger<GetCategoriesListQueryHandler> logger this.logger = logger;
+			this.logger = logger;
 		}
 		public async Task<List<CategoryListVm>> Handle(GetCategoriesListQuery request, CancellationToken cancellationToken)
 		{
-			//logger.LogInformation("Logger works");
+			logger.LogInformation("Logger works");
 			var categories = (await repository.ListAllAsync()).OrderBy(c => c.Name);
 			return mapper.Map<List<CategoryListVm>>(categories);
 		}
