@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -33,6 +34,7 @@ namespace TCC.Api.Controllers
 
 		[HttpGet("all", Name = "GetAllCategories")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
+		[Authorize]
 		public async Task<ActionResult<List<CategoryListVm>>> GetAllCategories()
 		{
 			var categories = await mediator.Send(new GetCategoriesListQuery());
