@@ -17,6 +17,7 @@ namespace TCC.App.BlazorWeb.Pages
 
         protected async override Task OnInitializedAsync()
         {
+
             CategoryList = await CategoryDataService.GetAllCategories();
         }
     }

@@ -34,7 +34,7 @@ namespace TCC.Api.Controllers
 
 		[HttpGet("all", Name = "GetAllCategories")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
-		[Authorize]
+		//[Authorize]
 		public async Task<ActionResult<List<CategoryListVm>>> GetAllCategories()
 		{
 			var categories = await mediator.Send(new GetCategoriesListQuery());
