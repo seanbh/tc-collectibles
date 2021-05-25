@@ -37,6 +37,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCC.App.BlazorWeb", "TCC.Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCC.Identity", "TCC.Identity\TCC.Identity.csproj", "{045CBBDA-0A79-430C-A919-5EDCFB19545F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "playground", "playground", "{42647D84-C76A-4B5B-B152-AC5142454ABD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebPlay", "BlazorWebPlay\BlazorWebPlay.csproj", "{022692AC-A725-4E72-B75E-D40FAE6849BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,10 @@ Global
 		{045CBBDA-0A79-430C-A919-5EDCFB19545F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{045CBBDA-0A79-430C-A919-5EDCFB19545F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{045CBBDA-0A79-430C-A919-5EDCFB19545F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022692AC-A725-4E72-B75E-D40FAE6849BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022692AC-A725-4E72-B75E-D40FAE6849BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022692AC-A725-4E72-B75E-D40FAE6849BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022692AC-A725-4E72-B75E-D40FAE6849BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +115,7 @@ Global
 		{EAAAED83-0F67-405C-8580-E7E9251B118C} = {3CE7FF94-E173-416F-8DA9-1FC3B1B6200D}
 		{952FDBDC-2F31-4F9D-BFE6-FC196E8B62E2} = {EAAAED83-0F67-405C-8580-E7E9251B118C}
 		{045CBBDA-0A79-430C-A919-5EDCFB19545F} = {20E24397-62DB-4BAB-8691-B58845354673}
+		{022692AC-A725-4E72-B75E-D40FAE6849BC} = {42647D84-C76A-4B5B-B152-AC5142454ABD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F95ADAFC-D2D4-4282-B032-0D61AEBBBEDB}
