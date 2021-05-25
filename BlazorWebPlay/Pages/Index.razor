@@ -5,6 +5,11 @@
 
 <h1>Hello, world!</h1>
 
+@if (!string.IsNullOrEmpty(ExceptionMessage))
+{
+    <div>@ExceptionMessage</div>
+}
+
 @if (CategoryList == null)
 {
     <p><em>Loading...</em></p>
@@ -30,9 +35,18 @@ else
 
 @code {
     private Category[] CategoryList;
+    private string ExceptionMessage;
 
     protected override async Task OnInitializedAsync()
     {
-        CategoryList = await Http.GetFromJsonAsync<Category[]>("api/category/all");
+        try
+        {
+            var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzZWFuaGFkZG9jayIsImp0aSI6ImJjZDA5MzNmLTEwYmEtNDMzOC04MTc0LTU4MGJlY2JmNzcwZSIsImVtYWlsIjoic2VhbmhhZGRvY2tAbGl2ZS5jb20iLCJ1aWQiOiJmNTNlNDBkMi1jN2I3LTQyMTAtYmQ1Yi01ODI1NDFmMjE5ZDEiLCJleHAiOjE2MjE5NzczNzgsImlzcyI6IlRjY0lkZW50aXR5IiwiYXVkIjoiVGNjSWRlbnRpdHlVc2VyIn0.Ams1izDOXlH7OuUSjFaW834SpEB6gaSjdotg38bdJKo";
+            CategoryList = await Http.GetFromJsonAsync<Category[]>("api/category/all");
+        }
+        catch (Exception ex)
+        {
+            ExceptionMessage = ex.Message;
+        }
     }
 }
