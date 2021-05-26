@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TCC.Services.Catalog.Rest.DbContexts;
+using TCC.Services.Catalog.Rest.Repositories;
 
 namespace TCC.Services.Catalog.Rest
 {
@@ -32,6 +33,8 @@ namespace TCC.Services.Catalog.Rest
 			services.AddDbContext<CatalogDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TccCatalog")));
 
 			services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+			services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 			services.AddControllers();
 			services.AddSwaggerGen(c =>
