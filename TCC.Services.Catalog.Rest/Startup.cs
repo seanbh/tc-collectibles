@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +30,8 @@ namespace TCC.Services.Catalog.Rest
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddDbContext<CatalogDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TccCatalog")));
+
+			services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 			services.AddControllers();
 			services.AddSwaggerGen(c =>
