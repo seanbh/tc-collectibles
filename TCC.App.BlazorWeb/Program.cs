@@ -10,6 +10,7 @@ using TCC.App.BlazorWeb.Auth;
 using TCC.App.BlazorWeb.Contracts;
 using TCC.App.BlazorWeb.Services;
 using TCC.App.BlazorWeb.Services.Base;
+using TCC.App.BlazorWeb.Services.Catalog;
 
 namespace TCC.App.BlazorWeb
 {
@@ -28,8 +29,13 @@ namespace TCC.App.BlazorWeb
 
             builder.Services.AddSingleton(sp => new HttpClient { BaseAddress = new Uri("https://localhost:44343/") });
             builder.Services.AddHttpClient<IClient, Client>(client => client.BaseAddress = new Uri("https://localhost:44343/"));
+            builder.Services.AddHttpClient<ICatalogServiceClient, CatalogServiceClient>((provider, client) =>
+            {
+                client.BaseAddress = new Uri("https://localhost:44396/");
+            });
 
             builder.Services.AddScoped<ICategoryDataService, CategoryDataService>();
+            builder.Services.AddScoped<CatalogDataService, CatalogDataService>();
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             await builder.Build().RunAsync();

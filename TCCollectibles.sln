@@ -39,11 +39,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCC.Identity", "TCC.Identit
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "playground", "playground", "{42647D84-C76A-4B5B-B152-AC5142454ABD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebPlay", "BlazorWebPlay\BlazorWebPlay.csproj", "{022692AC-A725-4E72-B75E-D40FAE6849BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebPlay", "BlazorWebPlay\BlazorWebPlay.csproj", "{022692AC-A725-4E72-B75E-D40FAE6849BC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{16C55C0F-CB83-4980-A4C9-582A0E6C4391}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Services.Catalog.Rest", "TCC.Services.Catalog.Rest\TCC.Services.Catalog.Rest.csproj", "{E106CDD4-5207-4FDB-B2C9-937616D50B4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCC.Services.Catalog.Rest", "TCC.Services.Catalog.Rest\TCC.Services.Catalog.Rest.csproj", "{E106CDD4-5207-4FDB-B2C9-937616D50B4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
