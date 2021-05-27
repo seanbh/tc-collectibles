@@ -42,6 +42,8 @@ namespace TCC.Services.Catalog.Rest
 			{
 				c.SwaggerDoc("v1", new OpenApiInfo { Title = "TCC.Services.Catalog.Rest", Version = "v1" });
 			});
+
+			services.AddCors(options => options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,6 +61,8 @@ namespace TCC.Services.Catalog.Rest
 			app.UseRouting();
 
 			app.UseAuthorization();
+
+			app.UseCors("Open");
 
 			app.UseEndpoints(endpoints =>
 			{
