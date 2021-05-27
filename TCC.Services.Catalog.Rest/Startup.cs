@@ -35,6 +35,7 @@ namespace TCC.Services.Catalog.Rest
 			services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 			services.AddScoped<ICategoryRepository, CategoryRepository>();
+			services.AddScoped<IProductRepository, ProductRepository>();
 
 			services.AddControllers();
 			services.AddSwaggerGen(c =>
