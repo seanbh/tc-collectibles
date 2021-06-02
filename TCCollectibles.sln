@@ -45,6 +45,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{16
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCC.Services.Catalog.Rest", "TCC.Services.Catalog.Rest\TCC.Services.Catalog.Rest.csproj", "{E106CDD4-5207-4FDB-B2C9-937616D50B4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC.Services.Cart.Rest", "TCC.Services.Cart.Rest\TCC.Services.Cart.Rest.csproj", "{5B190451-6BC6-471D-98AC-131653CAB44A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,10 @@ Global
 		{E106CDD4-5207-4FDB-B2C9-937616D50B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E106CDD4-5207-4FDB-B2C9-937616D50B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E106CDD4-5207-4FDB-B2C9-937616D50B4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B190451-6BC6-471D-98AC-131653CAB44A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B190451-6BC6-471D-98AC-131653CAB44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B190451-6BC6-471D-98AC-131653CAB44A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B190451-6BC6-471D-98AC-131653CAB44A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,6 +132,7 @@ Global
 		{022692AC-A725-4E72-B75E-D40FAE6849BC} = {42647D84-C76A-4B5B-B152-AC5142454ABD}
 		{16C55C0F-CB83-4980-A4C9-582A0E6C4391} = {3CE7FF94-E173-416F-8DA9-1FC3B1B6200D}
 		{E106CDD4-5207-4FDB-B2C9-937616D50B4C} = {16C55C0F-CB83-4980-A4C9-582A0E6C4391}
+		{5B190451-6BC6-471D-98AC-131653CAB44A} = {16C55C0F-CB83-4980-A4C9-582A0E6C4391}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F95ADAFC-D2D4-4282-B032-0D61AEBBBEDB}
