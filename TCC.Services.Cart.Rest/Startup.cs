@@ -13,6 +13,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TCC.Services.Cart.Rest.DbContexts;
+using TCC.Services.Cart.Rest.Respositories;
+using TCC.Services.Cart.Rest.Services;
 
 namespace TCC.Services.Cart.Rest
 {
@@ -32,6 +34,11 @@ namespace TCC.Services.Cart.Rest
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddDbContext<CartDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TccCart")));
+            services.AddHttpClient<ICatalogService, CatalogService>(c => c.BaseAddress = new Uri(Configuration["ApiConfigs:Catalog:Uri"]));
+
+            services.AddScoped<ICartRepository, CartRepository>();
+            services.AddScoped<ICartLinesRepository, CartLinesRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

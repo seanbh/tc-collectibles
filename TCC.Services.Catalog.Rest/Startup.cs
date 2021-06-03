@@ -31,7 +31,7 @@ namespace TCC.Services.Catalog.Rest
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddDbContext<CatalogDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TccCatalog")));
-
+			
 			services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 			services.AddScoped<ICategoryRepository, CategoryRepository>();
