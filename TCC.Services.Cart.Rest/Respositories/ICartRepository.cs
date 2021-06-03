@@ -5,7 +5,14 @@ using System.Threading.Tasks;
 
 namespace TCC.Services.Cart.Rest.Respositories
 {
-    public class ICartRepository
+    public interface ICartRepository
     {
+        Task<bool> CartExists(Guid CartId);
+
+        Task<Entities.Cart> GetCartById(Guid CartId);
+
+        void AddCart(Entities.Cart Cart);
+
+        Task<bool> SaveChanges();
     }
 }
