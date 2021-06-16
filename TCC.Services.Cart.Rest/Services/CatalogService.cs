@@ -19,7 +19,7 @@ namespace TCC.Services.Cart.Rest.Services
 
         public async Task<Product> GetProduct(Guid id)
         {
-            var response = await httpClient.GetAsync($"/api/products/{id}");
+            var response = await httpClient.GetAsync($"/api/Product/{id}");
             return await response.ReadContentAs<Product>();
         }
     }
