@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TCC.Services.Cart.Rest.Models;
 using TCC.Services.Cart.Rest.Respositories;
 using TCC.Services.Cart.Rest.Services;
 
@@ -58,6 +59,80 @@ namespace TCC.Services.Cart.Rest.Controllers
             }
 
             return Ok(mapper.Map<Models.CartLine>(cartLine));
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Post (Guid cartId, [FromBody] CartLineForCreation cartLineForCreation)
+		{
+            if(!await cartRepository.CartExists(cartId))
+			{
+                return NotFound();
+			}
+
+            if(!await productRepository.ProductExists(cartLineForCreation.ProductId))
+			{
+                var product = await catalogService.GetProduct(cartLineForCreation.ProductId);
+                productRepository.AddProduct(product);
+                await productRepository.SaveChanges();
+			}
+
+            var cartLineEntity = mapper.Map<Entities.CartLine>(cartLineForCreation);
+            var processedCartLine = await cartLinesRepository.AddOrUpdateCartLine(cartId, cartLineEntity);
+            await cartLinesRepository.SaveChanges();
+
+            var cartLineToReturn = mapper.Map<Models.CartLine>(processedCartLine);
+
+            return CreatedAtRoute("GetCartLine", new { cartId = cartLineEntity.CartId, cartLineId = cartLineEntity.CartLineId }, cartLineToReturn);
+		}
+
+        [HttpPut("{cartLineId}")]
+        public async Task<ActionResult<CartLine>> Put(Guid cartId,
+           Guid cartLineId,
+           [FromBody] CartLineForUpdate cartLineForUpdate)
+        {
+            if (!await cartRepository.CartExists(cartId))
+            {
+                return NotFound();
+            }
+
+            var cartLineEntity = await cartLinesRepository.GetCartLineById(cartLineId);
+
+            if (cartLineEntity == null)
+            {
+                return NotFound();
+            }
+
+            // map the entity to a dto
+            // apply the updated field values to that dto
+            // map the dto back to an entity
+            mapper.Map(cartLineForUpdate, cartLineEntity);
+
+            cartLinesRepository.UpdateCartLine(cartLineEntity);
+            await cartLinesRepository.SaveChanges();
+
+            return Ok(mapper.Map<CartLine>(cartLineEntity));
+        }
+
+        [HttpDelete("{cartLineId}")]
+        public async Task<IActionResult> Delete(Guid cartId,
+            Guid cartLineId)
+        {
+            if (!await cartRepository.CartExists(cartId))
+            {
+                return NotFound();
+            }
+
+            var cartLineEntity = await cartLinesRepository.GetCartLineById(cartLineId);
+
+            if (cartLineEntity == null)
+            {
+                return NotFound();
+            }
+
+            cartLinesRepository.RemoveCartLine(cartLineEntity);
+            await cartLinesRepository.SaveChanges();
+
+            return NoContent();
         }
 
     }
