@@ -23,8 +23,6 @@ namespace TCC.App.BlazorWeb.Pages
         [Inject]
         public IAuthenticationService AuthenticationService { get; set; }
 
-		//[Inject]
-		//private IBus bus { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
@@ -46,9 +44,6 @@ namespace TCC.App.BlazorWeb.Pages
             await AuthenticationService.Logout();
         }
 
-        protected async void Pay()
-		{
-            //await bus.Send(new PaymentRequestMessage { CartId = Guid.NewGuid() });
-		}
+       
     }
 }
