@@ -16,10 +16,9 @@ namespace TCC.App.MVC.Controllers
 		private readonly ILogger<HomeController> _logger;
 		private readonly IBus bus;
 
-		public HomeController(ILogger<HomeController> logger, IBus bus)
+		public HomeController(ILogger<HomeController> logger)
 		{
 			_logger = logger;
-			this.bus = bus;
 		}
 
 		public IActionResult Index()
@@ -38,10 +37,10 @@ namespace TCC.App.MVC.Controllers
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 		}
 
-		public async Task<IActionResult> Pay()
-		{
-			await bus.Send(new PaymentRequestMessage { CartId = Guid.NewGuid() });
-			return View("Index");
-		}
+		//public async Task<IActionResult> Pay()
+		//{
+		//	await bus.Send(new PaymentRequestMessage { CartId = Guid.NewGuid() });
+		//	return View("Index");
+		//}
 	}
 }

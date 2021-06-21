@@ -30,13 +30,13 @@ namespace TCC.App.MVC
 		{
 			services.AddControllersWithViews();
 
-			var storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=paymentrequests;AccountKey=tyjsGm3LCkKqLD+jrqB2Lhan8Zq93GSxLwfETH0FQBi7GnQmtbgDUWNmSgmVNOPehIpfsdTlumQ+O62KAr/rAQ==;EndpointSuffix=core.windows.net");
+			//var storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=paymentrequests;AccountKey=tyjsGm3LCkKqLD+jrqB2Lhan8Zq93GSxLwfETH0FQBi7GnQmtbgDUWNmSgmVNOPehIpfsdTlumQ+O62KAr/rAQ==;EndpointSuffix=core.windows.net");
 
-			services.AddRebus(c => c
-				.Transport(t => t.UseAzureStorageQueuesAsOneWayClient(storageAccount))
-				.Routing(r => r.TypeBased().Map<PaymentRequestMessage>(
-					"paymentrequests"))
-			);
+			//services.AddRebus(c => c
+			//	.Transport(t => t.UseAzureStorageQueuesAsOneWayClient(storageAccount))
+			//	.Routing(r => r.TypeBased().Map<PaymentRequestMessage>(
+			//		"paymentrequests"))
+			//);
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
