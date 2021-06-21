@@ -4,12 +4,17 @@ using Microsoft.AspNetCore.Components.Authorization;
 using System.Threading.Tasks;
 using TCC.App.BlazorWeb.Auth;
 using TCC.App.BlazorWeb.Contracts;
+using Rebus.Bus;
+using TCC.Messages;
+using System;
 
 namespace TCC.App.BlazorWeb.Pages
 {
     public partial class Index
     {
-        [Inject]
+		private readonly IBus bus;
+
+		[Inject]
         private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
         [Inject]
@@ -17,6 +22,9 @@ namespace TCC.App.BlazorWeb.Pages
 
         [Inject]
         public IAuthenticationService AuthenticationService { get; set; }
+
+		//[Inject]
+		//private IBus bus { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
@@ -37,5 +45,10 @@ namespace TCC.App.BlazorWeb.Pages
         {
             await AuthenticationService.Logout();
         }
+
+        protected async void Pay()
+		{
+            //await bus.Send(new PaymentRequestMessage { CartId = Guid.NewGuid() });
+		}
     }
 }
