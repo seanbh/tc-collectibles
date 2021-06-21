@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TCC.App.MVC.Models;
 using TCC.Messages;
 
 namespace TCC.App.MVC
@@ -29,6 +30,7 @@ namespace TCC.App.MVC
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllersWithViews();
+			services.AddScoped<IProductRepository, MockProductRepository>();
 
 			//var storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=paymentrequests;AccountKey=tyjsGm3LCkKqLD+jrqB2Lhan8Zq93GSxLwfETH0FQBi7GnQmtbgDUWNmSgmVNOPehIpfsdTlumQ+O62KAr/rAQ==;EndpointSuffix=core.windows.net");
 

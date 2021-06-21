@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Product>;
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        @foreach(var product in Model)
+			{
+                <h2>@product.Name</h2>
+                <h3>@product.Price</h3>
+			}
+    </body>
+    </html>
