@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TCC.App.MVC.Models;
+using TCC.App.MVC.ViewModels;
 
 namespace TCC.App.MVC.Controllers
 {
@@ -18,7 +19,10 @@ namespace TCC.App.MVC.Controllers
 
 		public ViewResult List()
 		{
-			return View(productRepository.GetProducts());
+			var vm = new ProductListViewModel();
+			vm.CurrentCategory = "Cards";
+			vm.Products = productRepository.GetProducts();
+			return View(vm);
 		}
 	}
 }
