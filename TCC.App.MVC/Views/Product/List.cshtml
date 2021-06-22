@@ -1,15 +1,8 @@
 ﻿@model TCC.App.MVC.ViewModels.ProductListViewModel
 
-    <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <h1>@Model.CurrentCategory</h1>
-        @foreach(var product in Model.Products)
-			{
-                <h2>@product.Name</h2>
-                <h3>@product.Price</h3>
-			}
-    </body>
-    </html>
+<h1>@Model.CurrentCategory</h1>
+@foreach (var product in Model.Products)
+{
+    <h2>@product.Name</h2>
+    <h3>@product.Price</h3>
+}
