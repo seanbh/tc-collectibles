@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Azure.Storage;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -31,6 +32,8 @@ namespace TCC.App.MVC
 		{
 			services.AddControllersWithViews();
 			services.AddScoped<IProductRepository, MockProductRepository>();
+
+			services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
 			//var storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=paymentrequests;AccountKey=tyjsGm3LCkKqLD+jrqB2Lhan8Zq93GSxLwfETH0FQBi7GnQmtbgDUWNmSgmVNOPehIpfsdTlumQ+O62KAr/rAQ==;EndpointSuffix=core.windows.net");
 
