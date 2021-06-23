@@ -31,7 +31,7 @@ namespace TCC.App.MVC
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllersWithViews();
-			services.AddScoped<IProductRepository, MockProductRepository>();
+			services.AddScoped<IProductRepository, ProductRepository>();
 
 			services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
