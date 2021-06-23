@@ -3,6 +3,6 @@
 <h1>@Model.CurrentCategory</h1>
 @foreach (var product in Model.Products)
 {
-    <h2>@product.Name</h2>
+    <h2><a asp-controller="Product" asp-action="Details" asp-route-id="@product.ProductId"> @product.Name</a></h2>
     <h3>@product.Price</h3>
 }

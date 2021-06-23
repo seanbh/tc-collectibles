@@ -8,5 +8,6 @@ namespace TCC.App.MVC.Models
 	public interface IProductRepository
 	{
 		List<Product> GetProducts();
+		Product GetById(int id);
 	}
 }

@@ -7,6 +7,11 @@ namespace TCC.App.MVC.Models
 {
 	public class MockProductRepository : IProductRepository
 	{
+		public Product GetById(int id)
+		{
+			throw new NotImplementedException();
+		}
+
 		public List<Product> GetProducts()
 		{
             return new List<Product>() {

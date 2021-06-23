@@ -13,6 +13,14 @@ namespace TCC.App.MVC.Models
 		{
 			this.db = db;
 		}
+
+		public Product GetById(int id)
+		{
+			var product = db.Products.Find(id);
+
+			return product;
+		}
+
 		public List<Product> GetProducts()
 		{
 			return db.Products.ToList();

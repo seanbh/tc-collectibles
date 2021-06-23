@@ -24,5 +24,11 @@ namespace TCC.App.MVC.Controllers
 			vm.Products = productRepository.GetProducts();
 			return View(vm);
 		}
+
+		public IActionResult Details(int id)
+		{
+			var product = productRepository.GetById(id);
+			return product != null ? View(product) : NotFound();
+		}
 	}
 }
